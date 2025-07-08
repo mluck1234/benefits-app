@@ -7,13 +7,9 @@ import dotenv
 # Optional: for better markdown rendering
 # import markdown2
 
-# Load .env variables
-dotenv.load_dotenv()
-
-# Get the API key
-api_key = os.getenv("OPENAI_API_KEY")
-if not api_key:
-    raise ValueError("OPENAI_API_KEY not found. Check your .env file.")
+headers = {
+    "authorization": st.secrets["OPENAI_API_KEY"]
+}
 
 # Create the OpenAI client
 client = OpenAI(api_key=api_key)
