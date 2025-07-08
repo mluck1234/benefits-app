@@ -5,12 +5,8 @@ import streamlit as st
 from openai import OpenAI
 
 
-headers = {
-    "authorization": st.secrets["OPENAI_API_KEY"]
-}
-
-# Create the OpenAI client
-client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+api_key = st.secrets["OPENAI_API_KEY"]
+client = OpenAI(api_key=api_key)
 
 # Paste the vector store ID
 vector_store_id = "vs_686c824aa2c8819184dae0f92444d54d"
