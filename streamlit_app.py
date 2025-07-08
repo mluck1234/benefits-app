@@ -3,9 +3,7 @@
 import os
 import streamlit as st
 from openai import OpenAI
-import dotenv
-# Optional: for better markdown rendering
-# import markdown2
+
 
 headers = {
     "authorization": st.secrets["OPENAI_API_KEY"]
