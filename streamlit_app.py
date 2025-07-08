@@ -10,7 +10,7 @@ headers = {
 }
 
 # Create the OpenAI client
-client = OpenAI(api_key=api_key)
+client = OpenAI(api_key=OPENAI_API_KEY)
 
 # Paste the vector store ID
 vector_store_id = "vs_686c824aa2c8819184dae0f92444d54d"
