@@ -15,12 +15,13 @@ api_key = os.getenv("OPENAI_API_KEY")
 if not api_key:
     raise ValueError("OPENAI_API_KEY not found. Check your .env file.")
 
-# Create OpenAI client
+# Create the OpenAI client
 client = OpenAI(api_key=api_key)
 
-# Paste your vector store ID
+# Paste the vector store ID
 vector_store_id = "vs_686c824aa2c8819184dae0f92444d54d"
 
+# And Storage ID's of the files looking at
 plan_to_file_id = {
     "APWU CDHP": "file-KT4xRXKvzhQ2pMp6GzzLvZ",
     "APWU High": "file-1ppMvRTLnsRHD6cSKGx1yH",
@@ -44,7 +45,7 @@ plan_to_file_id = {
 
 }
 
-# --- 3. Streamlit UI ---
+# Build the streamlit UI
 st.markdown(
     "<h1 style='text-align: center;'>🩺 Federal Health Benefits Assistant</h1>",
     unsafe_allow_html=True
@@ -123,6 +124,5 @@ if st.button("🔍 Submit") and query and selected_plans:
         with st.expander("🔎 Retrieved Document Snippets (Debug)"):
             for r in retrieved_texts:
                 st.markdown(f"**File ID:** {r.file_id}\n\n```{r.text.strip()}```")
-
 
 
